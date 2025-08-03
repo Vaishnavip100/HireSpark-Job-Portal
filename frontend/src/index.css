@@ -1,0 +1,403 @@
+/* This part imports the base Tailwind styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+
+  /* --- Global & App Layout --- */
+  .app {
+    background-color: #f9fafb;
+    min-height: 100vh;
+  }
+  .main-content {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 1rem; /* py-12 px-4 */
+  }
+  @media (min-width: 640px) {
+    .main-content {
+      padding-left: 1.5rem; /* sm:px-6 */
+      padding-right: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .main-content {
+      padding-left: 2rem; /* lg:px-8 */
+      padding-right: 2rem;
+    }
+  }
+  .content-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* gap-8 */
+  }
+  @media (min-width: 1024px) {
+    .content-layout {
+      flex-direction: row;
+    }
+  }
+  .sidebar {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  @media (min-width: 1024px) {
+    .sidebar {
+      width: 20rem; /* lg:w-80 */
+    }
+  }
+  .main-panel {
+    flex: 1 1 0%;
+  }
+
+  /* --- Header Component --- */
+  .header {
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .header-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem; /* h-16 */
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700;
+    color: #2563eb; /* text-blue-600 */
+  }
+  .nav-desktop {
+    display: none; /* hidden */
+  }
+  @media (min-width: 768px) {
+    .nav-desktop {
+      display: flex; /* md:flex */
+      align-items: center;
+      gap: 2rem; /* space-x-8 */
+    }
+  }
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.2s;
+    color: #374151; /* text-gray-700 */
+  }
+  .nav-link:hover {
+    color: #2563eb; /* hover:text-blue-600 */
+  }
+  .nav-link.active {
+    color: #2563eb; /* text-blue-600 */
+  }
+  .search-bar-container {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .search-bar-container {
+      display: flex; /* lg:flex */
+      align-items: center;
+      flex: 1 1 0%;
+      max-width: 32rem; /* max-w-lg */
+      margin: 0 2rem;
+    }
+  }
+  .search-form {
+    position: relative;
+    width: 100%;
+  }
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    height: 1rem;
+    width: 1rem;
+  }
+  .search-input {
+    width: 100%;
+    padding-left: 2.5rem; /* pl-10 */
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+  }
+  .search-input:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #3b82f6;
+  }
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+  }
+  .notification-btn {
+    padding: 0.5rem;
+    color: #9ca3af;
+  }
+  .notification-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  .menu-toggle-btn {
+    padding: 0.5rem;
+    color: #4b5563;
+  }
+  @media (min-width: 768px) {
+    .menu-toggle-btn {
+      display: none; /* md:hidden */
+    }
+  }
+  .menu-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  /* --- Login/Signup Buttons --- */
+  .login-btn, .logout-btn {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    background-color: transparent;
+    color: #374151;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .login-btn:hover {
+    background-color: #f3f4f6;
+  }
+  .signup-btn {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .signup-btn:hover {
+    background-color: #2563eb;
+  }
+  .welcome-user {
+    font-weight: 500;
+    color: #1f2937;
+    white-space: nowrap;
+  }
+  .logout-btn {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: 1px solid #fecaca;
+  }
+  .logout-btn:hover {
+    background-color: #fecaca;
+  }
+
+  /* Other component styles like JobCard, FilterSidebar etc. would also go here */
+}
+
+/* --- Auth Pages (Login/Signup) --- */
+.auth-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 1rem;
+  background-color: #f9fafb;
+  min-height: 80vh;
+}
+.auth-form-card {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #e5e7eb;
+}
+.auth-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+.auth-form-card .form-group {
+  margin-bottom: 1.5rem;
+}
+.auth-form-card label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+.auth-form-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+.auth-submit-btn {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.auth-submit-btn:hover {
+  background-color: #2563eb;
+}
+.auth-submit-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+.auth-error {
+  color: #ef4444;
+  background-color: #fee2e2;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.auth-switch-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #4b5563;
+}
+.auth-switch-link {
+  color: #3b82f6;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.auth-switch-link:hover {
+  text-decoration: underline;
+}
+
+/* Add this new block of CSS to the end of your src/index.css file */
+
+/* --- Post Job Form Component --- */
+.post-job-container {
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border: 1px solid #e5e7eb;
+  padding: 2rem; /* p-8 */
+}
+
+.form-header {
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.form-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  color: #4b5563; /* text-gray-600 */
+}
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+.form-label {
+  display: flex; /* Changed to flex for icon alignment */
+  align-items: center;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.label-icon {
+  display: inline;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* gap-6 */
+}
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; /* space-x-4 */
+  padding-top: 1.5rem; /* pt-6 */
+}
+
+.draft-btn {
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.draft-btn:hover {
+  background-color: #f9fafb;
+}
+
+.post-btn {
+  padding: 0.75rem 2rem; /* px-8 py-3 */
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.post-btn:hover {
+  background-color: #2563eb;
+}
