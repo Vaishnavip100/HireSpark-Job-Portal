@@ -60,7 +60,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ jobId, onClose }) =
     }
 
     try {
-      const res = await fetch(`http://localhost:5001/api/applications/${jobId}/apply`, {
+      const res = await fetch(`https://hirespark-job-portal-backend.onrender.com/api/applications/${jobId}/apply`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
