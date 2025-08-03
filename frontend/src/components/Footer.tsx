@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <h3 className="text-3xl font-bold text-blue-400 mb-4">HireSpark Jobs</h3>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-lg">
-              Our mission is to bridge the gap between innovative companies and the next generation of tech and Web3 talent. Your future starts with the right connection.
+              Our mission is to bridge the gap between innovative companies and the next generation talent. Your future starts with the right connection.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="p-2 bg-gray-700 rounded-lg hover:bg-blue-600"><Facebook size={20} /></a>
