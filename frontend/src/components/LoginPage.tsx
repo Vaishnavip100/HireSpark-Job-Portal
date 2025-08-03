@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UserInfo } from '../types';
 
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 interface LoginPageProps {
   onLoginSuccess: (data: UserInfo) => void;
