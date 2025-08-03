@@ -3,7 +3,7 @@ import { UserInfo } from '../types';
 import { ethers } from 'ethers';
 import { Edit, Save, XCircle } from 'lucide-react'; 
 
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 interface ProfilePageProps {
   userInfo: UserInfo;
