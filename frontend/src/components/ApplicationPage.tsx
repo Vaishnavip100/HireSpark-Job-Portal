@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Job, UserInfo } from '../types';
 
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 interface ApplicationPageProps {
   jobId: string;
