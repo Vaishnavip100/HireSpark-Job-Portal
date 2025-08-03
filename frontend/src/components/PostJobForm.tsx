@@ -4,7 +4,7 @@ import { ethers } from 'ethers';
 
 const ADMIN_WALLET_ADDRESS = "0x81D2a86D1e9aE130DAaED20bfEDB2527941E9E59"; 
 const JOB_POST_FEE = "0.001"; // The fee in Sepolia ETH
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 interface PostJobFormProps {
   onJobPosted: () => void;
