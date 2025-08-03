@@ -14,10 +14,10 @@ import ApplicationPage from './components/ApplicationPage';
 import ProfilePage from './components/ProfilePage';
 import JobsPostedPage from './components/JobsPostedPage';
 import ApplicantsPage from './components/ApplicantsPage';
-import AppliedJobsPage from './components/AppliedJobsPage'; // <-- 1. IMPORT THE NEW PAGE
+import AppliedJobsPage from './components/AppliedJobsPage';
 import { FilterState, Job, Company, UserInfo } from './types';
 
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('jobs');
