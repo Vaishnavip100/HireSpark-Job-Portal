@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Job, Company } from '../types';
 import { Edit, Trash2, Briefcase, MapPin, Users } from 'lucide-react';
 
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 interface UserInfo {
   _id: string;
