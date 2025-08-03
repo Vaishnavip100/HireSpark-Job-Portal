@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { UserInfo } from '../types';
 
-const API_URL = 'http://localhost:5001';
+const API_URL = 'https://hirespark-job-portal-backend.onrender.com';
 
 // This defines the structure of the applicant data we expect from the backend
 interface Applicant {
